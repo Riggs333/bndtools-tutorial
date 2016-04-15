@@ -2,6 +2,7 @@
 Neil Bartlett (http://bndtools.org/tutorial.html), revised by Thomas Traude
 :toc:
 :source-highlighter: highlightjs 
+:icons: font
 
 Introduction to component development with Bndtools.
 This document is an updated version of http://bndtools.org/tutorial.html.
@@ -46,11 +47,13 @@ image:images/03-Java-Settings.png[]
 image:images/04-Welcome-to-Bndtools.png[]
 image:images/05-Configuration-Template.png[]
 
-*Important Points:*
-
+[IMPORTANT]
+====
+.Important points
 * Bndtools projects are based on standard Eclipse Java (JDT) projects.
 * Bndtools uses a `cnf` project containing workspace-wide configuration that is normally shared between developers. It may also contain a repository of bundles.
 * A file named `bnd.bnd` is created at the top of each Bndtools project, which controls the settings for the project. The same settings are used by bnd when it is invoked from an offline ANT build.
+====
 
 === Write and Export the API
 
@@ -94,12 +97,14 @@ Save the file, and the bundle will be rebuilt to include the selected export. We
 
 image::images/09-Resolution-View.png[]
 
-*Important Points:*
-
+[IMPORTANT]
+====
+.Important points
 * The project configuration and the bundle contents are defined by `bnd.bnd`.
 * The identity of a bundle -- its "Bundle Symbolic Name" or BSN -- is controlled by the project name. In this case, the bundle's BSN is equal to the project name.
 * Bundles are always empty until we explicitly add contents to them. Adding a package to the **Export Packages** panel included that package in the bundle, and also declared it as an export in the `META-INF/MANIFEST.MF`.
 * *Normally* bundles contain more than just a single interface. This example is intentionally simplistic.
+====
 
 == Create an Implementation Project
 
@@ -128,10 +133,12 @@ image::images/12-Resulting-Build-Path.png[]
 
 Save the file.
 
-*Important Points:*
-
+[IMPORTANT]
+====
+.Important points
 * Build-time dependencies of the project can be added in the **Build Path** panel of the `bnd.bnd` editor.
 * Adding dependencies in this way (i.e. rather than via Eclipse's existing "Add to Build Path" menu) ensures that exactly the same dependencies are used when building offline with ANT.
+====
 
 === Write an Implementation
 
@@ -197,11 +204,13 @@ image::images/14-Enable-Sub-Bundles.png[]
 
 Some settings will be moved from `bnd.bnd` into the new `provider.bnd` file. You should now find a bundle in `generated` named `org.example.impls.provider.jar` which contains the `org.example` package and a Declarative Services component declaration in `OSGI-INF/org.example.Example.xml`.
 
-*Important Points:*
-
+[IMPORTANT]
+====
+.Important points
 * Bndtools project can output either a single bundle or multiple bundles.
 * In the case of single-bundle projects, the contents of that bundle are defined in `bnd.bnd`.
 * In the case of multi-bundle projects, the contents of each bundle is defined in a separate `.bnd` file. The `bnd.bnd` file is still used to define project-wide settings, such as build dependencies.
+====
 
 == Run an OSGi Framework
 
@@ -281,13 +290,14 @@ g!
 Our bundle now publishes a service under the `Greeting` interface.
 
 
-*Important Points:*
-
+[IMPORTANT]
+====
+.Important points
 * Run-time configurations can be defined in a `.bndrun` file. Multiple different run configurations can be used, resulting in different sets of bundles, different OSGi Framework implementations etc.
 * The set of bundles to include is derived from the **Run Requirements** list. Bndtools uses OBR resolution to resolve a list of bundles including their static dependencies.
 * If the OSGi Framework is still running, then saving the `bndrun` file will cause the list of bundles to be dynamically updated. So we can add and remove bundles without restarting.
 * Editing an existing bundle -- including editing the Java code that comprises it -- will also result in the bundle being dynamically updated in the runtime.
-
+====
 
 == Write a Command Component
 
@@ -359,7 +369,7 @@ START LEVEL 1
 g! 
 ----
 
-Note: The order and therefore the IDs of the bundles might be different on your machine. This depends on if you stopped and restarted your runtime in the meantime.
+NOTE: The order and therefore the IDs of the bundles might be different on your machine. This depends on if you stopped and restarted your runtime in the meantime.
 
 Finally, the `greet` command will now be available from the Gogo shell:
 
