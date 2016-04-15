@@ -4,6 +4,7 @@ Neil Bartlett (http://bndtools.org/tutorial.html), revised by Thomas Traude
 :source-highlighter: highlightjs 
 
 Introduction to component development with Bndtools.
+This document is an updated version of http://bndtools.org/tutorial.html.
 
 OS: Ubuntu 15.10
 
