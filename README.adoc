@@ -225,7 +225,7 @@ image::15-Run-Desciptor-Template.png[]
 
 On the next page enter `run` as the file name and click **Finish**.
  
-In the editor for the new `run.bndrun` file, click on **Run OSGi** near the top-right corner. Shortly, the Felix Shell prompt "`g! `" will appear in the **Console** view.
+In the editor for the new `run.bndrun` file, click on **Run OSGi** near the top-right corner. Shortly, the Felix Shell prompt `g!` will appear in the **Console** view.
 
 image::16-Felix-Shell-Prompt.png[]
 
